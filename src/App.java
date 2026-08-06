@@ -23,15 +23,19 @@ public class App {
                         st.executeUpdate(sql);
                 }
 
-                Monitor monitor2 = new Monitor("Apple", "Studio Display", 27.0, 5120, 2880,
-                                60, "IPS");
+                // Monitor monitor2 = new Monitor("Apple", "Studio Display", 27.0, 5120, 2880,
+                // 60, "IPS");
                 MonitorRepository mr = new MonitorRepository();
-                mr.createMonitor(monitor2);
+                // mr.createMonitor(monitor2);
 
                 ArrayList<Monitor> monitors = mr.getAllMonitors();
                 for (Monitor monitor : monitors) {
                         System.out.println(monitor);
                         System.out.println();
+                }
+                ArrayList<Monitor> monitorById = mr.getMonitorById(1);
+                for (Monitor monitor : monitorById) {
+                        System.out.println(monitor);
                 }
         }
 }

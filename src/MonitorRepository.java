@@ -53,4 +53,32 @@ public class MonitorRepository {
       }
       return monitors;
    }
+
+   public ArrayList<Monitor> getMonitorById(int id) throws SQLException {
+      String sql = """
+            SELECT * FROM monitor_catalog mc
+            WHERE mc.monitor_id = ?
+            """;
+      ArrayList<Monitor> monitors = new ArrayList<>();
+      try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement ps = con.prepareStatement(sql);) {
+         ps.setInt(1, id);
+         try (ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+               Monitor monitor = new Monitor(
+                     rs.getInt("monitor_id"),
+                     rs.getString("brand"),
+                     rs.getString("model_number"),
+                     rs.getDouble("screen_size"),
+                     rs.getInt("resolution_width"),
+                     rs.getInt("resolution_height"),
+                     rs.getInt("refresh_rate"),
+                     rs.getString("panel_type"));
+               monitors.add(monitor);
+            }
+         }
+         return monitors;
+      }
+   }
 }
