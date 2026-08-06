@@ -81,4 +81,19 @@ public class MonitorRepository {
          return monitors;
       }
    }
+
+   public void deleteMonitorById(int id) throws SQLException {
+      String sql = """
+            DELETE
+            FROM monitor_catalog
+            WHERE monitor_id = ?
+            """;
+      try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement ps = con.prepareStatement(sql);) {
+         ps.setInt(1, id);
+         ps.executeUpdate();
+         System.out.println("Monitor successfully deleted!");
+      }
+   }
 }

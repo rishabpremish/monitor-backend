@@ -37,5 +37,7 @@ public class App {
                 for (Monitor monitor : monitorById) {
                         System.out.println(monitor);
                 }
+
+                mr.deleteMonitorById(1);
         }
 }
