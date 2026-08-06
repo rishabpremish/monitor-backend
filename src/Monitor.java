@@ -1,4 +1,5 @@
 public class Monitor {
+   private int monitorId;
    private String brand;
    private String modelNumber;
    private double screenSize;
@@ -26,7 +27,33 @@ public class Monitor {
 
    }
 
+   // Constructor for retrieving monitor
+   public Monitor(
+         int monitorId,
+         String brand,
+         String modelNumber,
+         double screenSize,
+         int resolutionWidth,
+         int resolutionHeight,
+         int refreshRate,
+         String panelType) {
+
+      this.monitorId = monitorId;
+      this.brand = brand;
+      this.modelNumber = modelNumber;
+      this.screenSize = screenSize;
+      this.resolutionWidth = resolutionWidth;
+      this.resolutionHeight = resolutionHeight;
+      this.refreshRate = refreshRate;
+      this.panelType = panelType;
+
+   }
+
    // Get Methods
+   public int getMonitorId() {
+      return monitorId;
+   }
+
    public String getBrand() {
       return brand;
    }
@@ -57,7 +84,8 @@ public class Monitor {
 
    @Override
    public String toString() {
-      return "Brand: " + brand + "\n"
+      return "Monitor ID: " + monitorId + "\n"
+            + "Brand: " + brand + "\n"
             + "Model Number: " + modelNumber + "\n"
             + "Screen size: " + screenSize + "\n"
             + "Resolution: " + resolutionWidth + " x " + resolutionHeight + "\n"

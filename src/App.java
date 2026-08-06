@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.*;
 
 public class App {
         public static void main(String[] args) throws Exception {
@@ -7,7 +8,7 @@ public class App {
                                 monitor_id INT AUTO_INCREMENT PRIMARY KEY,
                                 brand VARCHAR(255),
                                 model_number VARCHAR(255),
-                                screen_size INT,
+                                screen_size DOUBLE,
                                 resolution_width INT,
                                 resolution_height INT,
                                 refresh_rate INT,
@@ -21,8 +22,16 @@ public class App {
                                 Statement st = con.createStatement()) {
                         st.executeUpdate(sql);
                 }
-                Monitor monitor = new Monitor("Dell", "U2720Q", 27.0, 3840, 2160, 60, "IPS");
+
+                Monitor monitor2 = new Monitor("Apple", "Studio Display", 27.0, 5120, 2880,
+                                60, "IPS");
                 MonitorRepository mr = new MonitorRepository();
-                mr.createMonitor(monitor);
+                mr.createMonitor(monitor2);
+
+                ArrayList<Monitor> monitors = mr.getAllMonitors();
+                for (Monitor monitor : monitors) {
+                        System.out.println(monitor);
+                        System.out.println();
+                }
         }
 }

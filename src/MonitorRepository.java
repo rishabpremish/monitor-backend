@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 public class MonitorRepository {
    private String url = System.getenv("MYSQL_URL");
@@ -23,7 +24,33 @@ public class MonitorRepository {
          ps.setInt(6, monitor.getRefreshRate());
          ps.setString(7, monitor.getPanelType());
          ps.executeUpdate();
-         System.out.println("Monitor sucessfully added!");
+         System.out.println("Monitor successfully added!");
       }
+   }
+
+   public ArrayList<Monitor> getAllMonitors() throws SQLException {
+      String sql = """
+            SELECT * FROM monitor_catalog
+            """;
+      ArrayList<Monitor> monitors = new ArrayList<>();
+      try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();) {
+
+         while (rs.next()) {
+            Monitor monitor = new Monitor(
+                  rs.getInt("monitor_id"),
+                  rs.getString("brand"),
+                  rs.getString("model_number"),
+                  rs.getDouble("screen_size"),
+                  rs.getInt("resolution_width"),
+                  rs.getInt("resolution_height"),
+                  rs.getInt("refresh_rate"),
+                  rs.getString("panel_type"));
+            monitors.add(monitor);
+         }
+      }
+      return monitors;
    }
 }
