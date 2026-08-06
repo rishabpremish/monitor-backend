@@ -1,17 +1,17 @@
 public class MonitorOffer {
-   private Monitor monitor;
+   private int monitorId;
    private String retailer;
    private double price;
    private String productUrl;
    private boolean inStock;
 
    public MonitorOffer(
-         Monitor monitor,
+         int monitorId,
          String retailer,
          double price,
          String productUrl,
          boolean inStock) {
-      this.monitor = monitor;
+      this.monitorId = monitorId;
       this.retailer = retailer;
       this.price = price;
       this.productUrl = productUrl;
@@ -19,8 +19,8 @@ public class MonitorOffer {
    }
 
    // Get Methods
-   public Monitor getMonitor() {
-      return monitor;
+   public int getMonitorId() {
+      return monitorId;
    }
 
    public String getRetailer() {

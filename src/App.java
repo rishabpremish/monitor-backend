@@ -3,25 +3,6 @@ import java.util.*;
 
 public class App {
         public static void main(String[] args) throws Exception {
-                String sql = """
-                                CREATE TABLE IF NOT EXISTS monitor_catalog (
-                                monitor_id INT AUTO_INCREMENT PRIMARY KEY,
-                                brand VARCHAR(255),
-                                model_number VARCHAR(255),
-                                screen_size DOUBLE,
-                                resolution_width INT,
-                                resolution_height INT,
-                                refresh_rate INT,
-                                panel_type VARCHAR(255)
-                                );
-                                """;
-                String url = System.getenv("MYSQL_URL");
-                String username = System.getenv("MYSQL_USER");
-                String password = System.getenv("MYSQL_PASSWORD");
-                try (Connection con = DriverManager.getConnection(url, username, password);
-                                Statement st = con.createStatement()) {
-                        st.executeUpdate(sql);
-                }
 
                 // Monitor monitor2 = new Monitor("Apple", "Studio Display", 27.0, 5120, 2880,
                 // 60, "IPS");
@@ -38,6 +19,20 @@ public class App {
                         System.out.println(monitor);
                 }
 
-                mr.deleteMonitorById(1);
+                // mr.deleteMonitorById(2);
+
+                // Retailer createdRetailer = new Retailer("Best Buy", "bestbuy.com");
+                RetailerRepository rr = new RetailerRepository();
+                // rr.createRetailer(createdRetailer);
+                System.out.println("---ALL RETAILERS---");
+                ArrayList<Retailer> retailers = rr.getAllRetailers();
+                for (Retailer retailer : retailers) {
+                        System.out.println(retailer);
+                }
+                System.out.println("---RETAILERS BY ID---");
+                ArrayList<Retailer> retailerById = rr.getRetailerById(1);
+                for (Retailer retailer : retailerById) {
+                        System.out.println(retailer);
+                }
         }
 }
