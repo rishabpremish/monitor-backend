@@ -34,5 +34,23 @@ public class App {
                 for (Retailer retailer : retailerById) {
                         System.out.println(retailer);
                 }
+
+                MonitorOfferRepository mor = new MonitorOfferRepository();
+                // MonitorOffer createdOffer = new MonitorOffer(3,
+                // 2,
+                // 1599,
+                // "https://www.bestbuy.com/product/apple-studio-display-standard-glass-tilt-adjustable-stand-silver/JJGCQLL4HF/sku/6595378?utm_source=feed&extStoreId=&ref=212&loc=23297235074&gclsrc=aw.ds&gad_source=1&gad_campaignid=23297238914&gbraid=0AAAAAD-ORIjmQz-l9taBm5XFVxjZcrTiI&gclid=CjwKCAjw4dDTBhAqEiwAkHYmSh6zF7gIEyvgfOQYDDIauHbuPuQjuTI0JBhv7-4nzU6IrIoT2Lj57hoCzWwQAvD_BwE",
+                // true);
+                // mor.createMonitorOffer(createdOffer);
+                System.out.println("---ALL MONITOR OFFERS---");
+                ArrayList<MonitorOffer> monitorOffers = mor.getAllMonitorOffers();
+                for (MonitorOffer offer : monitorOffers) {
+                        System.out.println(offer);
+                }
+                System.out.println("---MONITOR OFFERS BY ID---");
+                ArrayList<MonitorOffer> monitorOfferById = mor.getMonitorOfferById(1);
+                for (MonitorOffer offer : monitorOfferById) {
+                        System.out.println(offer);
+                }
         }
 }

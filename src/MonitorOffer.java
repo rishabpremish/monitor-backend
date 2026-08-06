@@ -1,30 +1,51 @@
 public class MonitorOffer {
+   private int offerId;
    private int monitorId;
-   private String retailer;
+   private int retailerId;
    private double price;
    private String productUrl;
    private boolean inStock;
 
    public MonitorOffer(
          int monitorId,
-         String retailer,
+         int retailerId,
          double price,
          String productUrl,
          boolean inStock) {
       this.monitorId = monitorId;
-      this.retailer = retailer;
+      this.retailerId = retailerId;
+      this.price = price;
+      this.productUrl = productUrl;
+      this.inStock = inStock;
+   }
+
+   // Constructor for retrieving offer
+   public MonitorOffer(
+         int offerId,
+         int monitorId,
+         int retailerId,
+         double price,
+         String productUrl,
+         boolean inStock) {
+      this.offerId = offerId;
+      this.monitorId = monitorId;
+      this.retailerId = retailerId;
       this.price = price;
       this.productUrl = productUrl;
       this.inStock = inStock;
    }
 
    // Get Methods
+   public int getOfferId() {
+      return offerId;
+   }
+
    public int getMonitorId() {
       return monitorId;
    }
 
-   public String getRetailer() {
-      return retailer;
+   public int getRetailerId() {
+      return retailerId;
    }
 
    public double getPrice() {
@@ -41,14 +62,11 @@ public class MonitorOffer {
 
    @Override
    public String toString() {
-      String stockStatus;
-
-      if (inStock) {
-         stockStatus = "In stock";
-      } else {
-         stockStatus = "Out of stock";
-      }
-
-      return retailer + " | $" + price + " | " + stockStatus;
+      return "Offer ID: " + offerId
+            + "\nMonitor ID: " + monitorId
+            + "\nRetailer ID: " + retailerId
+            + "\nPrice: $" + price
+            + "\nProduct URL: " + productUrl
+            + "\nStock: " + (inStock ? "In stock" : "Out of stock");
    }
 }

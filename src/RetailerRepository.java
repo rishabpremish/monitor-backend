@@ -9,15 +9,14 @@ public class RetailerRepository {
    public void createRetailer(Retailer retailer) throws SQLException {
       String sql = """
             INSERT INTO retailers (
-            retailer_id, name, website)
+            name, website)
             VALUES(?, ?, ?)
             """;
       try (
             Connection con = DriverManager.getConnection(url, username, password);
             PreparedStatement ps = con.prepareStatement(sql)) {
-         ps.setInt(1, retailer.getRetailerId());
-         ps.setString(2, retailer.getName());
-         ps.setString(3, retailer.getWebsite());
+         ps.setString(1, retailer.getName());
+         ps.setString(2, retailer.getWebsite());
          ps.executeUpdate();
          System.out.println("Retailer successfully created!");
       }
