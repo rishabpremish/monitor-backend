@@ -1,31 +1,28 @@
+import java.sql.*;
+
 public class App {
         public static void main(String[] args) throws Exception {
-                Monitor monitor1 = new Monitor(
-                                "Dell",
-                                "S2725QC",
-                                27.0,
-                                3840,
-                                2160,
-                                120,
-                                "IPS");
-                // System.out.println(monitor1.toString());
-                databaseManager.insertMonitor(monitor1);
-
-                MonitorOffer dellOffer = new MonitorOffer(
-                                monitor1,
-                                "Dell",
-                                299.99,
-                                "https://www.dell.com/en-us/shop/dell-27-plus-4k-usb-c-monitor-s2725qc/apd/210-brnc/monitors-monitor-accessories",
-                                true);
-                // System.out.println(dellOffer.toString());
-
-                MonitorOffer amazonOffer = new MonitorOffer(
-                                monitor1,
-                                "Amazon",
-                                299.99,
-                                "https://www.amazon.com/...",
-                                true);
-                // System.out.println(amazonOffer.toString());
-                databaseManager.printAllMonitors();
+                String sql = """
+                                CREATE TABLE IF NOT EXISTS monitor_catalog (
+                                monitor_id INT AUTO_INCREMENT PRIMARY KEY,
+                                brand VARCHAR(255),
+                                model_number VARCHAR(255),
+                                screen_size INT,
+                                resolution_width INT,
+                                resolution_height INT,
+                                refresh_rate INT,
+                                panel_type VARCHAR(255)
+                                );
+                                """;
+                String url = System.getenv("MYSQL_URL");
+                String username = System.getenv("MYSQL_USER");
+                String password = System.getenv("MYSQL_PASSWORD");
+                try (Connection con = DriverManager.getConnection(url, username, password);
+                                Statement st = con.createStatement()) {
+                        st.executeUpdate(sql);
+                }
+                Monitor monitor = new Monitor("Dell", "U2720Q", 27.0, 3840, 2160, 60, "IPS");
+                MonitorRepository mr = new MonitorRepository();
+                mr.createMonitor(monitor);
         }
 }

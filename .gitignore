@@ -1,0 +1,17 @@
+# Local database credentials
+.env
+.env.*
+!.env.example
+
+# Java build output
+*.class
+bin/
+out/
+target/
+build/
+
+# JDBC
+backend/lib/*.jar
+
+# macOS metadata
+.DS_Store
