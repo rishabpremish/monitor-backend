@@ -9,6 +9,7 @@ public class Monitor {
    private int resolutionHeight;
    private int refreshRate;
    private String panelType;
+   private String aspectRatio;
 
    public Monitor() {
    }
@@ -20,7 +21,8 @@ public class Monitor {
          int resolutionWidth,
          int resolutionHeight,
          int refreshRate,
-         String panelType) {
+         String panelType,
+         String aspectRatio) {
 
       this.brand = brand;
       this.modelNumber = modelNumber;
@@ -29,6 +31,7 @@ public class Monitor {
       this.resolutionHeight = resolutionHeight;
       this.refreshRate = refreshRate;
       this.panelType = panelType;
+      this.aspectRatio = aspectRatio;
 
    }
 
@@ -41,7 +44,8 @@ public class Monitor {
          int resolutionWidth,
          int resolutionHeight,
          int refreshRate,
-         String panelType) {
+         String panelType,
+         String aspectRatio) {
 
       this.monitorId = monitorId;
       this.brand = brand;
@@ -51,6 +55,7 @@ public class Monitor {
       this.resolutionHeight = resolutionHeight;
       this.refreshRate = refreshRate;
       this.panelType = panelType;
+      this.aspectRatio = aspectRatio;
 
    }
 
@@ -87,6 +92,10 @@ public class Monitor {
       return panelType;
    }
 
+   public String getAspectRatio() {
+      return aspectRatio;
+   }
+
    // Set Methods
    public void setBrand(String brand) {
       this.brand = brand;
@@ -116,6 +125,10 @@ public class Monitor {
       this.panelType = panelType;
    }
 
+   public void setAspectRatio(String aspectRatio) {
+      this.aspectRatio = aspectRatio;
+   }
+
    @Override
    public String toString() {
       return "Monitor ID: " + monitorId + "\n"
@@ -124,6 +137,7 @@ public class Monitor {
             + "Screen size: " + screenSize + "\n"
             + "Resolution: " + resolutionWidth + " x " + resolutionHeight + "\n"
             + "Refresh Rate: " + refreshRate + "\n"
-            + "Panel Type: " + panelType;
+            + "Panel Type: " + panelType + "\n"
+            + "Aspect Ratio: " + aspectRatio;
    }
 }

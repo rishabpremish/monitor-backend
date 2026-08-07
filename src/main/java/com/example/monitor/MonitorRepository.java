@@ -11,8 +11,8 @@ public class MonitorRepository {
    public void createMonitor(Monitor monitor) throws SQLException {
       String sql = """
                   INSERT INTO monitor_catalog (
-                  brand, model_number, screen_size, resolution_width, resolution_height, refresh_rate, panel_type)
-                  VALUES(?, ?, ?, ?, ?, ?, ?)
+                  brand, model_number, screen_size, resolution_width, resolution_height, refresh_rate, panel_type, aspect_ratio)
+                  VALUES(?, ?, ?, ?, ?, ?, ?, ?)
             """;
 
       try (
@@ -25,6 +25,7 @@ public class MonitorRepository {
          ps.setInt(5, monitor.getResolutionHeight());
          ps.setInt(6, monitor.getRefreshRate());
          ps.setString(7, monitor.getPanelType());
+         ps.setString(8, monitor.getAspectRatio());
          ps.executeUpdate();
          System.out.println("Monitor successfully added!");
       }
@@ -49,7 +50,8 @@ public class MonitorRepository {
                   rs.getInt("resolution_width"),
                   rs.getInt("resolution_height"),
                   rs.getInt("refresh_rate"),
-                  rs.getString("panel_type"));
+                  rs.getString("panel_type"),
+                  rs.getString("aspect_ratio"));
             monitors.add(monitor);
          }
       }
@@ -76,7 +78,8 @@ public class MonitorRepository {
                      rs.getInt("resolution_width"),
                      rs.getInt("resolution_height"),
                      rs.getInt("refresh_rate"),
-                     rs.getString("panel_type"));
+                     rs.getString("panel_type"),
+                     rs.getString("aspect_ratio"));
                monitors.add(monitor);
             }
          }

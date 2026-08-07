@@ -10,13 +10,14 @@ http:
     type: json
     data: |-
       {
-        "brand": "LG",
-        "modelNumber": "27GX790A",
-        "screenSize": 27.0,
-        "resolutionWidth": 2560,
-        "resolutionHeight": 1440,
-        "refreshRate": 240,
-        "panelType": "OLED"
+        "brand": "Apple",
+        "modelNumber": "Pro Display XDR",
+        "screenSize": 32.0,
+        "resolutionWidth": 6016,
+        "resolutionHeight": 3384,
+        "refreshRate": 60,
+        "panelType": "IPS LCD",
+        "aspectRatio": "16:9"
       }
   auth: inherit
 
