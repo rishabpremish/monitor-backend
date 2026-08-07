@@ -10,6 +10,9 @@ public class Monitor {
    private int refreshRate;
    private String panelType;
 
+   public Monitor() {
+   }
+
    public Monitor(
          String brand,
          String modelNumber,
@@ -82,6 +85,35 @@ public class Monitor {
 
    public String getPanelType() {
       return panelType;
+   }
+
+   // Setter Methods
+   public void setBrand(String brand) {
+      this.brand = brand;
+   }
+
+   public void setModelNumber(String modelNumber) {
+      this.modelNumber = modelNumber;
+   }
+
+   public void setScreenSize(double screenSize) {
+      this.screenSize = screenSize;
+   }
+
+   public void setResolutionWidth(int resolutionWidth) {
+      this.resolutionWidth = resolutionWidth;
+   }
+
+   public void setResolutionHeight(int resolutionHeight) {
+      this.resolutionHeight = resolutionHeight;
+   }
+
+   public void setRefreshRate(int refreshRate) {
+      this.refreshRate = refreshRate;
+   }
+
+   public void setPanelType(String panelType) {
+      this.panelType = panelType;
    }
 
    @Override
