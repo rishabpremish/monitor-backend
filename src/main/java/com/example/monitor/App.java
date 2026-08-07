@@ -1,4 +1,5 @@
-import java.sql.*;
+package com.example.monitor;
+
 import java.util.*;
 
 public class App {

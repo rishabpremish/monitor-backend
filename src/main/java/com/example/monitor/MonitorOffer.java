@@ -1,3 +1,5 @@
+package com.example.monitor;
+
 public class MonitorOffer {
    private int offerId;
    private int monitorId;

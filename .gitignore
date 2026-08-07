@@ -9,9 +9,36 @@ bin/
 out/
 target/
 build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Maven wrapper cache
+.mvn/wrapper/maven-wrapper.jar
 
 # JDBC
 backend/lib/*.jar
 
 # macOS metadata
 .DS_Store
+
+# IDE metadata
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+.idea/
+*.iws
+*.iml
+*.ipr
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+.vscode/
+
+# Spring Initializr help
+HELP.md

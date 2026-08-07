@@ -1,3 +1,5 @@
+package com.example.monitor;
+
 public class Monitor {
    private int monitorId;
    private String brand;

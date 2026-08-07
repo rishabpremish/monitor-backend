@@ -1,3 +1,5 @@
+package com.example.monitor;
+
 public class Retailer {
    private int retailerId;
    private String name;
