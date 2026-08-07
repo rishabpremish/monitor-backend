@@ -101,4 +101,19 @@ public class MonitorOfferRepository {
          return monitorOffers;
       }
    }
+
+   public void deleteMonitorOfferById(int offerId) throws SQLException {
+      String sql = """
+            DELETE FROM monitor_offers
+            WHERE offer_id = ?
+            """;
+      try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement ps = con.prepareStatement(sql);) {
+         ps.setInt(1, offerId);
+         ps.executeUpdate();
+         System.out.println("Monitor offer successfully deleted!");
+
+      }
+   }
 }
