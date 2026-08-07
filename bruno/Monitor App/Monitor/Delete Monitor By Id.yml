@@ -1,0 +1,15 @@
+info:
+  name: Delete Monitor By Id
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: http://localhost:8080/api/monitors/8
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

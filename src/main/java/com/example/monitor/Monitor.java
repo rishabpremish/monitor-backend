@@ -87,7 +87,7 @@ public class Monitor {
       return panelType;
    }
 
-   // Setter Methods
+   // Set Methods
    public void setBrand(String brand) {
       this.brand = brand;
    }

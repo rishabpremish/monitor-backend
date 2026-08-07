@@ -8,6 +8,9 @@ public class MonitorOffer {
    private String productUrl;
    private boolean inStock;
 
+   public MonitorOffer() {
+   }
+
    public MonitorOffer(
          int monitorId,
          int retailerId,
@@ -60,6 +63,27 @@ public class MonitorOffer {
 
    public boolean getInStock() {
       return inStock;
+   }
+
+   // Set methods
+   public void setMonitorId(int monitorId) {
+      this.monitorId = monitorId;
+   }
+
+   public void setRetailerId(int retailerId) {
+      this.retailerId = retailerId;
+   }
+
+   public void setPrice(double price) {
+      this.price = price;
+   }
+
+   public void setProductUrl(String productUrl) {
+      this.productUrl = productUrl;
+   }
+
+   public void setInStock(Boolean inStock) {
+      this.inStock = inStock;
    }
 
    @Override

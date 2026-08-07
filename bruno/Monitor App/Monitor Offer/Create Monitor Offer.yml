@@ -1,0 +1,25 @@
+info:
+  name: Create Monitor Offer
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8080/api/monitor-offers
+  body:
+    type: json
+    data: |-
+      {
+        "monitorId": 5,
+        "retailerId": 2,
+        "price": 899.99,
+        "productUrl": "https://www.bestbuy.com/product/lg-ultragear-27-oled-qhd-480hz-0-03ms-nvidia-g-sync-compatible-amd-freesync-premium-pro-gaming-monitor-black/6607888",
+        "inStock": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

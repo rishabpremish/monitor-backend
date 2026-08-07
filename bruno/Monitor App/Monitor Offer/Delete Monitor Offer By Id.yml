@@ -1,11 +1,11 @@
 info:
-  name: Get All Retailers
+  name: Delete Monitor Offer By Id
   type: http
-  seq: 4
+  seq: 9
 
 http:
-  method: GET
-  url: http://localhost:8080/api/retailer
+  method: DELETE
+  url: http://localhost:8080/api/monitor-offers/1
   auth: inherit
 
 settings:

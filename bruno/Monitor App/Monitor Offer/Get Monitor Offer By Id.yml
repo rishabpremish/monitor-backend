@@ -1,11 +1,11 @@
 info:
-  name: Delete Monitor By Id
+  name: Get Monitor Offer By Id
   type: http
-  seq: 8
+  seq: 7
 
 http:
-  method: DELETE
-  url: http://localhost:8080/api/monitors/7
+  method: GET
+  url: http://localhost:8080/api/monitor-offers/1
   auth: inherit
 
 settings:
