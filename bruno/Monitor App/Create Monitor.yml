@@ -1,0 +1,27 @@
+info:
+  name: Create Monitor
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/monitors
+  body:
+    type: json
+    data: |-
+      {
+        "brand": "LG",
+        "modelNumber": "27GX790A",
+        "screenSize": 27.0,
+        "resolutionWidth": 2560,
+        "resolutionHeight": 1440,
+        "refreshRate": 240,
+        "panelType": "OLED"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
