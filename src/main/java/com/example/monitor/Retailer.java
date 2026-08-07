@@ -5,6 +5,9 @@ public class Retailer {
    private String name;
    private String website;
 
+   public Retailer() {
+   }
+
    public Retailer(String name, String website) {
       this.name = name;
       this.website = website;
@@ -28,6 +31,16 @@ public class Retailer {
 
    public String getWebsite() {
       return website;
+   }
+
+   // Set methods
+
+   public void setName(String name) {
+      this.name = name;
+   }
+
+   public void setWebsite(String website) {
+      this.website = website;
    }
 
    @Override

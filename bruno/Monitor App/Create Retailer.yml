@@ -1,0 +1,22 @@
+info:
+  name: Create Retailer
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:8080/api/retailer
+  body:
+    type: json
+    data: |-
+      {
+        "name": "New Egg",
+        "website": "https://www.newegg.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

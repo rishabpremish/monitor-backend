@@ -12,8 +12,8 @@ public class RetailerRepository {
       String sql = """
             INSERT INTO retailers (
             name, website)
-            VALUES(?, ?, ?)
-            """;
+            VALUES(?, ?)
+               """;
       try (
             Connection con = DriverManager.getConnection(url, username, password);
             PreparedStatement ps = con.prepareStatement(sql)) {
@@ -67,5 +67,17 @@ public class RetailerRepository {
          }
       }
       return retailers;
+   }
+
+   public void deleteRetailerById(int id) throws SQLException {
+      String sql = """
+            DELETE FROM retailers
+            WHERE retailer_id = ?
+            """;
+      try (Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement ps = con.prepareStatement(sql)) {
+         ps.setInt(1, id);
+         ps.executeUpdate();
+      }
    }
 }
