@@ -22,6 +22,7 @@ public class Monitor {
    private Double depth;
    private Double weight;
    private Integer modelYear;
+   private String features;
 
    public Monitor() {
    }
@@ -46,7 +47,8 @@ public class Monitor {
          Double height,
          Double depth,
          Double weight,
-         Integer modelYear) {
+         Integer modelYear,
+         String features) {
 
       this.brand = brand;
       this.modelNumber = modelNumber;
@@ -68,6 +70,7 @@ public class Monitor {
       this.depth = depth;
       this.weight = weight;
       this.modelYear = modelYear;
+      this.features = features;
 
    }
 
@@ -93,7 +96,8 @@ public class Monitor {
          Double height,
          Double depth,
          Double weight,
-         Integer modelYear) {
+         Integer modelYear,
+         String features) {
 
       this.monitorId = monitorId;
       this.brand = brand;
@@ -116,6 +120,7 @@ public class Monitor {
       this.depth = depth;
       this.weight = weight;
       this.modelYear = modelYear;
+      this.features = features;
 
    }
 
@@ -204,6 +209,10 @@ public class Monitor {
       return modelYear;
    }
 
+   public String getFeatures() {
+      return features;
+   }
+
    // Set Methods
    public void setBrand(String brand) {
       this.brand = brand;
@@ -285,6 +294,10 @@ public class Monitor {
       this.modelYear = modelYear;
    }
 
+   public void setFeatures(String features) {
+      this.features = features;
+   }
+
    @Override
    public String toString() {
       return "Monitor ID: " + monitorId + "\n"
@@ -306,6 +319,7 @@ public class Monitor {
             + "Height: " + height + "\n"
             + "Depth: " + depth + "\n"
             + "Weight: " + weight + "\n"
-            + "Model Year: " + modelYear;
+            + "Model Year: " + modelYear + "\n"
+            + "Features:" + features;
    }
 }

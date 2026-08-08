@@ -13,8 +13,8 @@ public class MonitorRepository {
                   INSERT INTO monitor_catalog (
                   brand, model_number, screen_size, resolution_width, resolution_height, refresh_rate, panel_type, aspect_ratio,
                   brightness, response_time, contrast_ratio, hdr_support, connectivity, vesa_mount, vesa_pattern,
-                  width, height, depth, weight, model_year)
-                  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                  width, height, depth, weight, model_year, features)
+                  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """;
 
       try (
@@ -40,6 +40,7 @@ public class MonitorRepository {
          ps.setObject(18, monitor.getDepth(), Types.DOUBLE);
          ps.setObject(19, monitor.getWeight(), Types.DOUBLE);
          ps.setObject(20, monitor.getModelYear(), Types.INTEGER);
+         ps.setString(21, monitor.getFeatures());
          ps.executeUpdate();
          System.out.println("Monitor successfully added!");
       }
@@ -77,7 +78,8 @@ public class MonitorRepository {
                   rs.getObject("height", Double.class),
                   rs.getObject("depth", Double.class),
                   rs.getObject("weight", Double.class),
-                  rs.getObject("model_year", Integer.class));
+                  rs.getObject("model_year", Integer.class),
+                  rs.getString("features"));
             monitors.add(monitor);
          }
       }
@@ -117,7 +119,8 @@ public class MonitorRepository {
                      rs.getObject("height", Double.class),
                      rs.getObject("depth", Double.class),
                      rs.getObject("weight", Double.class),
-                     rs.getObject("model_year", Integer.class));
+                     rs.getObject("model_year", Integer.class),
+                     rs.getString("features"));
                monitors.add(monitor);
             }
          }

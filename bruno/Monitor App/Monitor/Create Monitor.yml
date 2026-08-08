@@ -29,7 +29,8 @@ http:
         "height": 412.0,
         "depth": 27.0,
         "weight": 7.48,
-        "modelYear": 2019
+        "modelYear": 2019,
+        "features": "Reference mode; True Tone; Night Shift"
       }
   auth: inherit
 
