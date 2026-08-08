@@ -20,10 +20,10 @@ public class MonitorRepository {
             PreparedStatement ps = con.prepareStatement(sql)) {
          ps.setString(1, monitor.getBrand());
          ps.setString(2, monitor.getModelNumber());
-         ps.setDouble(3, monitor.getScreenSize());
-         ps.setInt(4, monitor.getResolutionWidth());
-         ps.setInt(5, monitor.getResolutionHeight());
-         ps.setInt(6, monitor.getRefreshRate());
+         ps.setObject(3, monitor.getScreenSize(), Types.DOUBLE);
+         ps.setObject(4, monitor.getResolutionWidth(), Types.INTEGER);
+         ps.setObject(5, monitor.getResolutionHeight(), Types.INTEGER);
+         ps.setObject(6, monitor.getRefreshRate(), Types.INTEGER);
          ps.setString(7, monitor.getPanelType());
          ps.setString(8, monitor.getAspectRatio());
          ps.executeUpdate();
@@ -46,10 +46,10 @@ public class MonitorRepository {
                   rs.getInt("monitor_id"),
                   rs.getString("brand"),
                   rs.getString("model_number"),
-                  rs.getDouble("screen_size"),
-                  rs.getInt("resolution_width"),
-                  rs.getInt("resolution_height"),
-                  rs.getInt("refresh_rate"),
+                  rs.getObject("screen_size", Double.class),
+                  rs.getObject("resolution_width", Integer.class),
+                  rs.getObject("resolution_height", Integer.class),
+                  rs.getObject("refresh_rate", Integer.class),
                   rs.getString("panel_type"),
                   rs.getString("aspect_ratio"));
             monitors.add(monitor);
@@ -74,10 +74,10 @@ public class MonitorRepository {
                      rs.getInt("monitor_id"),
                      rs.getString("brand"),
                      rs.getString("model_number"),
-                     rs.getDouble("screen_size"),
-                     rs.getInt("resolution_width"),
-                     rs.getInt("resolution_height"),
-                     rs.getInt("refresh_rate"),
+                     rs.getObject("screen_size", Double.class),
+                     rs.getObject("resolution_width", Integer.class),
+                     rs.getObject("resolution_height", Integer.class),
+                     rs.getObject("refresh_rate", Integer.class),
                      rs.getString("panel_type"),
                      rs.getString("aspect_ratio"));
                monitors.add(monitor);

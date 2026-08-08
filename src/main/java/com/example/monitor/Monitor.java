@@ -1,13 +1,13 @@
 package com.example.monitor;
 
 public class Monitor {
-   private int monitorId;
+   private Integer monitorId;
    private String brand;
    private String modelNumber;
-   private double screenSize;
-   private int resolutionWidth;
-   private int resolutionHeight;
-   private int refreshRate;
+   private Double screenSize;
+   private Integer resolutionWidth;
+   private Integer resolutionHeight;
+   private Integer refreshRate;
    private String panelType;
    private String aspectRatio;
 
@@ -17,10 +17,10 @@ public class Monitor {
    public Monitor(
          String brand,
          String modelNumber,
-         double screenSize,
-         int resolutionWidth,
-         int resolutionHeight,
-         int refreshRate,
+         Double screenSize,
+         Integer resolutionWidth,
+         Integer resolutionHeight,
+         Integer refreshRate,
          String panelType,
          String aspectRatio) {
 
@@ -37,13 +37,13 @@ public class Monitor {
 
    // Constructor for retrieving monitor
    public Monitor(
-         int monitorId,
+         Integer monitorId,
          String brand,
          String modelNumber,
-         double screenSize,
-         int resolutionWidth,
-         int resolutionHeight,
-         int refreshRate,
+         Double screenSize,
+         Integer resolutionWidth,
+         Integer resolutionHeight,
+         Integer refreshRate,
          String panelType,
          String aspectRatio) {
 
@@ -60,7 +60,7 @@ public class Monitor {
    }
 
    // Get Methods
-   public int getMonitorId() {
+   public Integer getMonitorId() {
       return monitorId;
    }
 
@@ -72,19 +72,19 @@ public class Monitor {
       return modelNumber;
    }
 
-   public double getScreenSize() {
+   public Double getScreenSize() {
       return screenSize;
    }
 
-   public int getResolutionWidth() {
+   public Integer getResolutionWidth() {
       return resolutionWidth;
    }
 
-   public int getResolutionHeight() {
+   public Integer getResolutionHeight() {
       return resolutionHeight;
    }
 
-   public int getRefreshRate() {
+   public Integer getRefreshRate() {
       return refreshRate;
    }
 
@@ -105,19 +105,19 @@ public class Monitor {
       this.modelNumber = modelNumber;
    }
 
-   public void setScreenSize(double screenSize) {
+   public void setScreenSize(Double screenSize) {
       this.screenSize = screenSize;
    }
 
-   public void setResolutionWidth(int resolutionWidth) {
+   public void setResolutionWidth(Integer resolutionWidth) {
       this.resolutionWidth = resolutionWidth;
    }
 
-   public void setResolutionHeight(int resolutionHeight) {
+   public void setResolutionHeight(Integer resolutionHeight) {
       this.resolutionHeight = resolutionHeight;
    }
 
-   public void setRefreshRate(int refreshRate) {
+   public void setRefreshRate(Integer refreshRate) {
       this.refreshRate = refreshRate;
    }
 
