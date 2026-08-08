@@ -10,6 +10,18 @@ public class Monitor {
    private Integer refreshRate;
    private String panelType;
    private String aspectRatio;
+   private Double brightness;
+   private Double responseTime;
+   private Integer contrastRatio;
+   private String hdrSupport;
+   private String connectivity;
+   private Boolean vesaMount;
+   private String vesaPattern;
+   private Double width;
+   private Double height;
+   private Double depth;
+   private Double weight;
+   private Integer modelYear;
 
    public Monitor() {
    }
@@ -22,7 +34,19 @@ public class Monitor {
          Integer resolutionHeight,
          Integer refreshRate,
          String panelType,
-         String aspectRatio) {
+         String aspectRatio,
+         Double brightness,
+         Double responseTime,
+         Integer contrastRatio,
+         String hdrSupport,
+         String connectivity,
+         Boolean vesaMount,
+         String vesaPattern,
+         Double width,
+         Double height,
+         Double depth,
+         Double weight,
+         Integer modelYear) {
 
       this.brand = brand;
       this.modelNumber = modelNumber;
@@ -32,6 +56,18 @@ public class Monitor {
       this.refreshRate = refreshRate;
       this.panelType = panelType;
       this.aspectRatio = aspectRatio;
+      this.brightness = brightness;
+      this.responseTime = responseTime;
+      this.contrastRatio = contrastRatio;
+      this.hdrSupport = hdrSupport;
+      this.connectivity = connectivity;
+      this.vesaMount = vesaMount;
+      this.vesaPattern = vesaPattern;
+      this.width = width;
+      this.height = height;
+      this.depth = depth;
+      this.weight = weight;
+      this.modelYear = modelYear;
 
    }
 
@@ -45,7 +81,19 @@ public class Monitor {
          Integer resolutionHeight,
          Integer refreshRate,
          String panelType,
-         String aspectRatio) {
+         String aspectRatio,
+         Double brightness,
+         Double responseTime,
+         Integer contrastRatio,
+         String hdrSupport,
+         String connectivity,
+         Boolean vesaMount,
+         String vesaPattern,
+         Double width,
+         Double height,
+         Double depth,
+         Double weight,
+         Integer modelYear) {
 
       this.monitorId = monitorId;
       this.brand = brand;
@@ -56,6 +104,18 @@ public class Monitor {
       this.refreshRate = refreshRate;
       this.panelType = panelType;
       this.aspectRatio = aspectRatio;
+      this.brightness = brightness;
+      this.responseTime = responseTime;
+      this.contrastRatio = contrastRatio;
+      this.hdrSupport = hdrSupport;
+      this.connectivity = connectivity;
+      this.vesaMount = vesaMount;
+      this.vesaPattern = vesaPattern;
+      this.width = width;
+      this.height = height;
+      this.depth = depth;
+      this.weight = weight;
+      this.modelYear = modelYear;
 
    }
 
@@ -96,6 +156,54 @@ public class Monitor {
       return aspectRatio;
    }
 
+   public Double getBrightness() {
+      return brightness;
+   }
+
+   public Double getResponseTime() {
+      return responseTime;
+   }
+
+   public Integer getContrastRatio() {
+      return contrastRatio;
+   }
+
+   public String getHdrSupport() {
+      return hdrSupport;
+   }
+
+   public String getConnectivity() {
+      return connectivity;
+   }
+
+   public Boolean getVesaMount() {
+      return vesaMount;
+   }
+
+   public String getVesaPattern() {
+      return vesaPattern;
+   }
+
+   public Double getWidth() {
+      return width;
+   }
+
+   public Double getHeight() {
+      return height;
+   }
+
+   public Double getDepth() {
+      return depth;
+   }
+
+   public Double getWeight() {
+      return weight;
+   }
+
+   public Integer getModelYear() {
+      return modelYear;
+   }
+
    // Set Methods
    public void setBrand(String brand) {
       this.brand = brand;
@@ -129,6 +237,54 @@ public class Monitor {
       this.aspectRatio = aspectRatio;
    }
 
+   public void setBrightness(Double brightness) {
+      this.brightness = brightness;
+   }
+
+   public void setResponseTime(Double responseTime) {
+      this.responseTime = responseTime;
+   }
+
+   public void setContrastRatio(Integer contrastRatio) {
+      this.contrastRatio = contrastRatio;
+   }
+
+   public void setHdrSupport(String hdrSupport) {
+      this.hdrSupport = hdrSupport;
+   }
+
+   public void setConnectivity(String connectivity) {
+      this.connectivity = connectivity;
+   }
+
+   public void setVesaMount(Boolean vesaMount) {
+      this.vesaMount = vesaMount;
+   }
+
+   public void setVesaPattern(String vesaPattern) {
+      this.vesaPattern = vesaPattern;
+   }
+
+   public void setWidth(Double width) {
+      this.width = width;
+   }
+
+   public void setHeight(Double height) {
+      this.height = height;
+   }
+
+   public void setDepth(Double depth) {
+      this.depth = depth;
+   }
+
+   public void setWeight(Double weight) {
+      this.weight = weight;
+   }
+
+   public void setModelYear(Integer modelYear) {
+      this.modelYear = modelYear;
+   }
+
    @Override
    public String toString() {
       return "Monitor ID: " + monitorId + "\n"
@@ -138,6 +294,18 @@ public class Monitor {
             + "Resolution: " + resolutionWidth + " x " + resolutionHeight + "\n"
             + "Refresh Rate: " + refreshRate + "\n"
             + "Panel Type: " + panelType + "\n"
-            + "Aspect Ratio: " + aspectRatio;
+            + "Aspect Ratio: " + aspectRatio + "\n"
+            + "Brightness: " + brightness + "\n"
+            + "Response Time: " + responseTime + "\n"
+            + "Contrast Ratio: " + contrastRatio + "\n"
+            + "HDR Support: " + hdrSupport + "\n"
+            + "Connectivity: " + connectivity + "\n"
+            + "VESA Mount: " + vesaMount + "\n"
+            + "VESA Pattern: " + vesaPattern + "\n"
+            + "Width: " + width + "\n"
+            + "Height: " + height + "\n"
+            + "Depth: " + depth + "\n"
+            + "Weight: " + weight + "\n"
+            + "Model Year: " + modelYear;
    }
 }

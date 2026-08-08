@@ -11,8 +11,10 @@ public class MonitorRepository {
    public void createMonitor(Monitor monitor) throws SQLException {
       String sql = """
                   INSERT INTO monitor_catalog (
-                  brand, model_number, screen_size, resolution_width, resolution_height, refresh_rate, panel_type, aspect_ratio)
-                  VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+                  brand, model_number, screen_size, resolution_width, resolution_height, refresh_rate, panel_type, aspect_ratio,
+                  brightness, response_time, contrast_ratio, hdr_support, connectivity, vesa_mount, vesa_pattern,
+                  width, height, depth, weight, model_year)
+                  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """;
 
       try (
@@ -26,6 +28,18 @@ public class MonitorRepository {
          ps.setObject(6, monitor.getRefreshRate(), Types.INTEGER);
          ps.setString(7, monitor.getPanelType());
          ps.setString(8, monitor.getAspectRatio());
+         ps.setObject(9, monitor.getBrightness(), Types.DOUBLE);
+         ps.setObject(10, monitor.getResponseTime(), Types.DOUBLE);
+         ps.setObject(11, monitor.getContrastRatio(), Types.INTEGER);
+         ps.setString(12, monitor.getHdrSupport());
+         ps.setString(13, monitor.getConnectivity());
+         ps.setObject(14, monitor.getVesaMount(), Types.BOOLEAN);
+         ps.setString(15, monitor.getVesaPattern());
+         ps.setObject(16, monitor.getWidth(), Types.DOUBLE);
+         ps.setObject(17, monitor.getHeight(), Types.DOUBLE);
+         ps.setObject(18, monitor.getDepth(), Types.DOUBLE);
+         ps.setObject(19, monitor.getWeight(), Types.DOUBLE);
+         ps.setObject(20, monitor.getModelYear(), Types.INTEGER);
          ps.executeUpdate();
          System.out.println("Monitor successfully added!");
       }
@@ -51,7 +65,19 @@ public class MonitorRepository {
                   rs.getObject("resolution_height", Integer.class),
                   rs.getObject("refresh_rate", Integer.class),
                   rs.getString("panel_type"),
-                  rs.getString("aspect_ratio"));
+                  rs.getString("aspect_ratio"),
+                  rs.getObject("brightness", Double.class),
+                  rs.getObject("response_time", Double.class),
+                  rs.getObject("contrast_ratio", Integer.class),
+                  rs.getString("hdr_support"),
+                  rs.getString("connectivity"),
+                  rs.getObject("vesa_mount", Boolean.class),
+                  rs.getString("vesa_pattern"),
+                  rs.getObject("width", Double.class),
+                  rs.getObject("height", Double.class),
+                  rs.getObject("depth", Double.class),
+                  rs.getObject("weight", Double.class),
+                  rs.getObject("model_year", Integer.class));
             monitors.add(monitor);
          }
       }
@@ -79,7 +105,19 @@ public class MonitorRepository {
                      rs.getObject("resolution_height", Integer.class),
                      rs.getObject("refresh_rate", Integer.class),
                      rs.getString("panel_type"),
-                     rs.getString("aspect_ratio"));
+                     rs.getString("aspect_ratio"),
+                     rs.getObject("brightness", Double.class),
+                     rs.getObject("response_time", Double.class),
+                     rs.getObject("contrast_ratio", Integer.class),
+                     rs.getString("hdr_support"),
+                     rs.getString("connectivity"),
+                     rs.getObject("vesa_mount", Boolean.class),
+                     rs.getString("vesa_pattern"),
+                     rs.getObject("width", Double.class),
+                     rs.getObject("height", Double.class),
+                     rs.getObject("depth", Double.class),
+                     rs.getObject("weight", Double.class),
+                     rs.getObject("model_year", Integer.class));
                monitors.add(monitor);
             }
          }

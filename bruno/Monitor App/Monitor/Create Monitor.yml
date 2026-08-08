@@ -17,7 +17,19 @@ http:
         "resolutionHeight": 3384,
         "refreshRate": 60,
         "panelType": "IPS LCD",
-        "aspectRatio": "16:9"
+        "aspectRatio": "16:9",
+        "brightness": 1000.0,
+        "responseTime": null,
+        "contrastRatio": 1000000,
+        "hdrSupport": "HDR",
+        "connectivity": "1 x Thunderbolt 3; 3 x USB-C",
+        "vesaMount": true,
+        "vesaPattern": "100 x 100 mm",
+        "width": 718.0,
+        "height": 412.0,
+        "depth": 27.0,
+        "weight": 7.48,
+        "modelYear": 2019
       }
   auth: inherit
 
